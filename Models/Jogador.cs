@@ -15,25 +15,38 @@ namespace Projeto_MVC_1.Models
         public Jogador(){
             CreateFolderAndFile(PATH);
         }
-
+        /// <summary>
+        ///  Cria os Jogadores
+        /// </summary>
+        /// <param name="j"></param>
         public void Create(Jogador j)
         {
             string[] linha = {PrepararLinha(j)};
             File.AppendAllLines(PATH,linha);
         }
-
+        /// <summary>
+        /// Apresenta os dados dos jogadores
+        /// </summary>
+        /// <param name="j"></param>
+        /// <returns></returns>
         private string PrepararLinha(Jogador j){
        
             return $"{j.IdJogador};{j.Nome};{j.IdEquipe}";
         }
-
+        /// <summary>
+        /// Exclui jogadores
+        /// /// </summary>
+        /// <param name="IdEquipe"></param>
         public void Delete(int IdEquipe)
         {
             List<String> linhas = ReadAllLinesCSV(PATH);
             linhas.RemoveAll(z => z.Split(";")[0] == IdJogador.ToString());
             RewriteCSV(PATH,linhas);
         }
- 
+        /// <summary>
+        /// Lê os dados dos jogadores
+        /// </summary>
+        /// <returns></returns>
         public List<Jogador> ReadAll()
         {
             List<Jogador> jogadores = new List<Jogador>();
@@ -50,7 +63,10 @@ namespace Projeto_MVC_1.Models
             }
             return jogadores;
         }
-
+        /// <summary>
+        /// Altera os dados apresentados dos jogadores
+        /// </summary>
+        /// <param name="j"></param>
         public void Update(Jogador j)
         {
            List<String> linhas = ReadAllLinesCSV(PATH);

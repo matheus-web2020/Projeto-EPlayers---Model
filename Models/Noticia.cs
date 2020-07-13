@@ -16,17 +16,27 @@ namespace Projeto_MVC_1.Models
         public Noticia(){
            CreateFolderAndFile(PATH);
         }
-
+        /// <summary>
+        /// Cria a notícia
+        /// </summary>
+        /// <param name="n"></param>
         public void Create(Noticia n)
         {
            string[] linha = {PrepararLinha(n)};
            File.AppendAllLines(PATH,linha);
         }
-
+        /// <summary>
+        /// Mostra os dados da notícia
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
         private string PrepararLinha(Noticia n){
            return $"{n.IdNoticia};{n.Titulo};{n.Texto};{n.Imagem}";
         }
-
+        /// <summary>
+        /// Exclui os dados da notícia
+        /// </summary>
+        /// <param name="IdNoticia"></param>
         public void Delete(int IdNoticia)
         {
             List<String> linhas = ReadAllLinesCSV(PATH);
@@ -34,7 +44,10 @@ namespace Projeto_MVC_1.Models
             RewriteCSV(PATH,linhas);
 
         }
-
+        /// <summary>
+        /// Lê os dados da notícia
+        /// </summary>
+        /// <returns></returns>
         public List<Noticia> ReadAll()
         {
             List<Noticia> noticias = new List<Noticia>();
@@ -52,7 +65,10 @@ namespace Projeto_MVC_1.Models
             }
             return noticias;
         }
-
+        /// <summary>
+        /// Altera as notícias
+        /// </summary>
+        /// <param name="n"></param>
         public void Update(Noticia n)
         {
              List<String> linhas = ReadAllLinesCSV(PATH);

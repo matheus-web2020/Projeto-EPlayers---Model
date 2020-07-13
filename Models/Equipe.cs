@@ -15,18 +15,28 @@ namespace Projeto_MVC_1.Models
         public Equipe(){
             CreateFolderAndFile(PATH);
         }
-
+        /// <summary>
+        /// Cria as equipes
+        /// </summary>
+        /// <param name="e"></param>
         public void Create(Equipe e)
         {
             string[] linhas = {PrepararLinha(e)};
            File.AppendAllLines(PATH,linhas);
 
         }
-
+        /// <summary>
+        /// Mostra os dados das equipes
+        /// </summary>
+        /// <param name="e"></param>
+        /// <returns></returns>
         private string PrepararLinha(Equipe e){
             return $"{e.IdEquipe};{e.Nome};{e.Imagem}";
         }
-
+        /// <summary>
+        /// Lê os dados das equipes
+        /// </summary>
+        /// <returns></returns>
         public List<Equipe> ReadAll()
         {
             List<Equipe> equipes = new List<Equipe>();
@@ -43,7 +53,10 @@ namespace Projeto_MVC_1.Models
             }
             return equipes;
         }
-
+        /// <summary>
+        /// Altera as equipes
+        /// </summary>
+        /// <param name="e"></param>
         public void Update(Equipe e)
         {
             List<string> linhas = ReadAllLinesCSV(PATH);
@@ -52,7 +65,10 @@ namespace Projeto_MVC_1.Models
 
            RewriteCSV(PATH,linhas);
         }
-
+        /// <summary>
+        /// Exclui as equipes
+        /// </summary>
+        /// <param name="IdEquipe"></param>
         public void Delete(int IdEquipe)
         {
            List<string> linhas = ReadAllLinesCSV(PATH);
