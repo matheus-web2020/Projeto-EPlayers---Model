@@ -20531,6 +20531,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Matheus\\Desktop\\SENAI\\Projeto_MVC_1\\Views\\Equipe\\index.cshtml",
+      "TargetPath": "Views\\Equipe\\index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Matheus\\Desktop\\SENAI\\Projeto_MVC_1\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
@@ -20543,6 +20548,16 @@
     {
       "FilePath": "c:\\Users\\Matheus\\Desktop\\SENAI\\Projeto_MVC_1\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Matheus\\Desktop\\SENAI\\Projeto_MVC_1\\Views\\Jogador\\index.cshtml",
+      "TargetPath": "Views\\Jogador\\index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Matheus\\Desktop\\SENAI\\Projeto_MVC_1\\Views\\Noticia\\index.cshtml",
+      "TargetPath": "Views\\Noticia\\index.cshtml",
       "FileKind": "mvc"
     },
     {
