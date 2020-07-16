@@ -10,7 +10,7 @@ namespace Projeto_MVC_1.Models
         public string Nome { get; set; }
         public string Imagem { get; set; }
 
-        private const string PATH = "Database/equipe.csv";
+        private const string PATH = "Database/Equipe.csv";
 
         public Equipe(){
             CreateFolderAndFile(PATH);
@@ -73,7 +73,6 @@ namespace Projeto_MVC_1.Models
         {
            List<string> linhas = ReadAllLinesCSV(PATH);
            linhas.RemoveAll(y => y.Split(";")[0] == IdEquipe.ToString());
-
            RewriteCSV(PATH,linhas);
         }
     }

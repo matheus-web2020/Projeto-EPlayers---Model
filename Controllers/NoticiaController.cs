@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -23,14 +24,33 @@ namespace Projeto_MVC_1.Controllers
         public IActionResult Criar(IFormCollection form){
              
              Noticia noticias = new Noticia();
-             noticias.IdNoticia = Int32.Parse(form["IdNoticia"]);
+             noticias.IdNoticias = Int32.Parse(form["IdNoticias"]);
              noticias.Titulo = form["Título"];
              noticias.Texto = form["Texto"];
-             noticias.Imagem = form["Imagem"];
+             //Upload da Imagem
+            var file    = form.Files[0];
+            var folder  = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Noticia");
+
+            if(file != null)
+            {
+                if(!Directory.Exists(folder)){
+                    Directory.CreateDirectory(folder);
+                }
+
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/", folder, file.FileName);
+                using (var stream = new FileStream(path, FileMode.Create))  
+                {  
+                    file.CopyTo(stream);  
+                }
+                noticias.Imagem   = file.FileName;
+            }
+            else
+            {
+                noticias.Imagem   = "padrao.png";
+            }
+            //Término do upload da imagem
 
              noticiaModel.Create(noticias);
-
-             ViewBag.Noticia = noticiaModel.ReadAll(); 
              return LocalRedirect("~/Noticia"); 
         }
 

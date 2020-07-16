@@ -6,12 +6,12 @@ namespace Projeto_MVC_1.Models
 {
     public class Noticia : EPlayersBase , Interfaces.INoticia
     {
-        public int IdNoticia { get; set; }
+        public int IdNoticias { get; set; }
         public string Titulo { get; set; }
         public string Texto { get; set; }
         public string Imagem { get; set; }
 
-        private const string PATH = "Database/noticia.csv";
+        private const string PATH = "Database/Noticia.csv";
 
         public Noticia(){
            CreateFolderAndFile(PATH);
@@ -31,7 +31,7 @@ namespace Projeto_MVC_1.Models
         /// <param name="n"></param>
         /// <returns></returns>
         private string PrepararLinha(Noticia n){
-           return $"{n.IdNoticia};{n.Titulo};{n.Texto};{n.Imagem}";
+           return $"{n.IdNoticias};{n.Titulo};{n.Texto};{n.Imagem}";
         }
         /// <summary>
         /// Exclui os dados da notícia
@@ -56,7 +56,7 @@ namespace Projeto_MVC_1.Models
             {
                 string[] linha = item.Split(";");
                 Noticia noticia = new Noticia();
-                noticia.IdNoticia = Int32.Parse(linha[0]);
+                noticia.IdNoticias = Int32.Parse(linha[0]);
                 noticia.Titulo = linha[1];
                 noticia.Texto = linha[2];
                 noticia.Imagem = linha[3];
@@ -71,8 +71,8 @@ namespace Projeto_MVC_1.Models
         /// <param name="n"></param>
         public void Update(Noticia n)
         {
-             List<String> linhas = ReadAllLinesCSV(PATH);
-            linhas.RemoveAll(x => x.Split(";")[0] == IdNoticia.ToString());
+             List<string> linhas = ReadAllLinesCSV(PATH);
+            linhas.RemoveAll(x => x.Split(";")[0] == IdNoticias.ToString());
             linhas.Add(PrepararLinha(n));
             RewriteCSV(PATH,linhas);
         }

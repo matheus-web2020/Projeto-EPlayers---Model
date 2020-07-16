@@ -37,9 +37,9 @@ namespace Projeto_MVC_1.Models
         /// Exclui jogadores
         /// /// </summary>
         /// <param name="IdEquipe"></param>
-        public void Delete(int IdEquipe)
+        public void Delete(int IdJogador)
         {
-            List<String> linhas = ReadAllLinesCSV(PATH);
+            List<string> linhas = ReadAllLinesCSV(PATH);
             linhas.RemoveAll(z => z.Split(";")[0] == IdJogador.ToString());
             RewriteCSV(PATH,linhas);
         }

@@ -23,13 +23,19 @@ namespace Projeto_MVC_1.Controllers
                  
                  Jogador jogador = new Jogador();
                  jogador.IdEquipe = Int32.Parse(form["IdEquipe"]);
-                 jogador.Nome = form["IdEquipe"];
+                 jogador.Nome = form["Nome"];
                  jogador.IdJogador = Int32.Parse(form["IdJogador"]);
 
                  jogadorModel.Create(jogador);
 
                  ViewBag.Jogador = jogadorModel.ReadAll(); 
                  return LocalRedirect("~/Jogador"); 
+        }
+
+        [Route("Jogador/{id}")]
+        public IActionResult Deletar(int id){
+              jogadorModel.Delete(id);
+              return LocalRedirect("~/jogador");
         }
 
         

@@ -15,7 +15,7 @@ namespace Projeto_MVC_1.Models
             
         }
 
-        public void Delete(int IdEquipe)
+        public void Delete(int IdEquipe1, int IdEquipe2)
         {
            
             

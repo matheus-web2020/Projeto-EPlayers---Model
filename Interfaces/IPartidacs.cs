@@ -8,6 +8,6 @@ namespace Projeto_MVC_1.Interfaces
          void Create(Partida p);
          List<Partida> ReadAll();
          void Update(Partida p);
-         void Delete(int IdEquipe);
+         void Delete(int IdEquipe1, int IdEquipe2);
     }
 }
