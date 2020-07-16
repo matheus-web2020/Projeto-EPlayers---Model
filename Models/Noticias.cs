@@ -22,8 +22,8 @@ namespace Projeto_MVC_1.Models
             CreateFolderAndFile(PATH);
         }
 
-        private string PrepararTexto (Noticias n){
-            return $"{n.IdNoticias};{n.Titulo};{n.Texto}; {n.Imagem}";
+        private string PrepararLinha (Noticias n){
+            return $"{n.IdNoticias};{n.Titulo};{n.Texto};{n.Imagem}";
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace Projeto_MVC_1.Models
         /// <param name="n">noticia</param>
         public void Create(Noticias n)
         {
-            string[] linha = { PrepararTexto(n) };
+            string[] linha = { PrepararLinha(n) };
             File.AppendAllLines(PATH, linha);
         }
 
@@ -81,25 +81,8 @@ namespace Projeto_MVC_1.Models
         {
              List<string> linhas = ReadAllLinesCSV(PATH);
             linhas.RemoveAll(x => x.Split(";")[0] == n.IdNoticias.ToString());
-            linhas.Add( PrepararTexto(n) );
+            linhas.Add( PrepararLinha(n) );
             RewriteCSV(PATH, linhas);
         }
-
-
-
-        /// <summary>
-        ///  Uma lista que lê linhas csv
-        /// </summary>
-        /// <param name="PATH"></param>
-        /// <returns></returns>
-        
-
-        
-        /// <summary>
-        /// Reescreve o CSV
-        /// </summary>
-        /// <param name="PATH">Caminho do arquivo</param>
-        /// <param name="linhas">Linhas para reescrever o arquivo</param>
-        
     }
 }
