@@ -3,11 +3,11 @@ using Projeto_MVC_1.Models;
 
 namespace Projeto_MVC_1.Interfaces
 {
-    public interface INoticia
+    public interface INoticias
     {
-         void Create(Noticia n);
-         List<Noticia> ReadAll();
-         void Update(Noticia n);
+         void Create(Noticias n);
+         List<Noticias> ReadAll();
+         void Update(Noticias n);
          void Delete(int IdNoticia);
     }
 }
