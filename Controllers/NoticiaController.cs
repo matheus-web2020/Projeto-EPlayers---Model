@@ -24,7 +24,7 @@ namespace Projeto_MVC_1.Controllers
         public IActionResult Criar(IFormCollection form){
              
              Noticia noticias = new Noticia();
-             noticias.IdNoticias = Int32.Parse(form["IdNoticias"]);
+             noticias.IdNoticia = Int32.Parse(form["IdNoticia"]);
              noticias.Titulo = form["Título"];
              noticias.Texto = form["Texto"];
              //Upload da Imagem
