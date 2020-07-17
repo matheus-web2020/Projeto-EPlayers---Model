@@ -21,7 +21,6 @@ C:\Users\Matheus\Desktop\SENAI\Projeto_MVC_1\obj\Debug\netcoreapp3.1\Projeto_MVC
 C:\Users\Matheus\Desktop\SENAI\Projeto_MVC_1\obj\Debug\netcoreapp3.1\Projeto_MVC_1.RazorCoreGenerate.cache
 C:\Users\Matheus\Desktop\SENAI\Projeto_MVC_1\obj\Debug\netcoreapp3.1\Razor\Views\Equipe\index.cshtml.g.cs
 C:\Users\Matheus\Desktop\SENAI\Projeto_MVC_1\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Matheus\Desktop\SENAI\Projeto_MVC_1\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Matheus\Desktop\SENAI\Projeto_MVC_1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Matheus\Desktop\SENAI\Projeto_MVC_1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Matheus\Desktop\SENAI\Projeto_MVC_1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs

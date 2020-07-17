@@ -20561,11 +20561,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Matheus\\Desktop\\SENAI\\Projeto_MVC_1\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Matheus\\Desktop\\SENAI\\Projeto_MVC_1\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"

@@ -3,16 +3,28 @@
     ViewData["Title"] = "Equipes";
 }
 
-<form action="@Url.Action("Cadastrar")" method="post" enctype="multipart/form-data">
+        <div class="titulo_pagina">
+            <h1>cadastro de @ViewData["Title"]</h1>
+        </div>
 
-    <Label for="IdEquipe">IdEquipe</Label>
-    <input type="text" name="IdEquipe" id="IdEquipe">
-    <Label for="Nome">Nome</Label>
-    <input type="text" name="Nome" id="Nome">
-    <Label for="Imagem">Imagem</Label>
-    <input type="file" name="Imagem" id="Imagem">
+<form class ="cadastro" action="@Url.Action("Cadastrar")" method="post" enctype="multipart/form-data">
 
-    <button type="submit">Cadastrar Equipe</button>
+    <div class="campo">
+      <Label for="IdEquipe">IdEquipe</Label>
+      <input type="text" name="IdEquipe" id="IdEquipe">
+    </div>
+
+    <div class="campo">
+      <Label for="Nome">Nome</Label>
+      <input type="text" name="Nome" id="Nome">
+    </div>
+
+     <div class="campo">
+      <Label for="Imagem">Imagem</Label>
+      <input type="file" name="Imagem" id="Imagem">
+    </div>
+
+    <button class="gradient btn" type="submit">Cadastrar Equipe</button>
 
 </form>
 
@@ -32,7 +44,7 @@
                     <img src="img/Equipes/@item.Imagem" alt="Imagem da equipe @item.Nome">
                 </td>
                 <td>
-                    <a asp-controller="Equipe" asp-action = "Deletar" asp-route-id="@item.IdEquipe">Excluir</a>
+                    <a asp-controller="Equipe" asp-action = "Deletar" asp-route-id="@item.IdEquipe"><i class="fa fa-trash"></a>
                 </td>
             </tr>
         }
